@@ -1,7 +1,10 @@
 class PagesController < ApplicationController
   def home
     @page = %w[about contact education experience portfolio skills].include?(params[:page]) ? params[:page] : 'home'
-    render @page
+    respond_to do |format|
+      format.html { render @page }
+      format.js { render @page }
+    end
   end
   
   def contact
