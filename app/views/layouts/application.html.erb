@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Nick J. Reed</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <!--[if lt IE 9]><%= javascript_include_tag "excanvas" %><![endif]-->
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<section id="main" data-current-page="<%= @page %>">
+  <div id="p0" class="title_block p0 initial_hover">
+    <div id="logo">Nick J. Reed</div>
+    <div id="sublogo">:developer</div>
+  </div>
+  <div id="p1" class="block p0" data-page="about" data-url="<%= page_path('about') %>">
+    <div class="block_label">About Me</div>
+  </div>
+  <div id="p2" class="small_block_right p0" data-page="education" data-url="<%= page_path('education') %>">
+    <div class="block_label">Education</div>
+  </div>
+  <div id="p4" class="small_block_left p0" data-page="skills" data-url="<%= page_path('skills') %>">
+    <div class="block_label">Skills</div>
+  </div>
+  <div id="p5" class="block p0" data-page="contact" data-url="<%= page_path('contact') %>">
+    <div class="block_label">Contact</div>
+  </div>
+  <div id="p6" class="small_block_right p0" data-page="experience" data-url="<%= page_path('experience') %>">
+    <div class="block_label">Experience</div>
+  </div>
+  <div id="p8" class="small_block_left p0" data-page="portfolio" data-url="<%= page_path('portfolio') %>">
+    <div class="block_label">Portfolio</div>
+  </div>
+  <section id="page">
+      <%= yield %>
+    </section>
+  </section>
+</section>
+
+</body>
+</html>

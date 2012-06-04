@@ -1,0 +1,373 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.education_bg {
+	background-image: image_url('mizzou.jpg');
+}
+#page {
+	#page_header {
+		.page_header_title {
+			text-align: center;
+			font-family: 'ExoDemiBold';
+			font-size: 22px;
+		}
+		.page_header_separator {
+			font-family: 'NymphetteRegular';
+			color: #FFFFFF;
+			text-align: center;
+			font-size: 26px;
+		}
+	}
+	#page_content {
+		text-align: center;
+	}
+	#home_btn {
+		@include position(absolute, 7px 7px 0 0);
+		cursor: pointer;
+	}
+	&.about {
+		#page_header {
+			margin-left: 320px;
+			
+		}
+		#my_pic {
+			@include position(absolute, 0px 0 0 0px);
+		}
+		#page_content {
+			margin-left: 320px;
+			text-align: left;
+			padding: 15px;
+			p {
+				font-family: 'ArtifikaMedium';
+				font-size: 14px;
+			}
+		}
+	}
+	&.contact {
+		#page_content {
+			#contact_form_container {
+				float: right;
+				margin-top: 20px;
+				width: 600px;
+				
+				.row, .submit_row {
+					height: 50px;
+					line-height: 50px;
+					margin: 10px 0px;
+				}
+				.text_area_row {
+					margin: 10px 0px;
+				}
+				.submit_row {
+					.cell {
+						text-align: right !important;
+					}
+				}
+				.cell {
+					display: inline-block;
+					&.label {
+						padding-right: 15px;
+						width: 70px;
+						text-align: right;
+						vertical-align: top;
+					}
+					&.input {
+						width: 300px;
+						text-align: left;
+						input, textarea {
+							width: 100%;
+							border-radius: 5px;
+							padding: 5px;
+							border: none;
+							opacity: 0.8;
+							font-size: 16px;
+						}
+						input[type="submit"] {
+							width: 100px;
+							@include button;
+							&:hover {
+								cursor: pointer;
+							};
+						}
+						textarea {
+							height: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+	&.skills {
+		#word_cloud_container {
+			text-align: center;
+		}
+		#active_skill_category {
+			line-height: 30px;
+			height: 30px;
+			text-align: center;
+		}
+		#back_to_categories {
+			text-align: center;
+			&:hover {
+				text-decoration: underline;
+				cursor: pointer;
+			}
+		}
+	}
+	&.education {
+		#page_header {
+			@include position(absolute, 0 0 10px 15px);
+		}
+		#education_content {
+			width: 555px;
+			margin-left: 375px;
+			margin-top: 40px;
+			text-align: center;
+			text-shadow: 0 2px 3px #FFFFFF;
+			.row1, .row2, .row3 {	
+				display: none;
+				margin-top: 20px;	
+			}
+			.row1 {
+				width: 100%;
+				font-size: 24px;
+				background-color: rgba(38, 75, 122, 0.55);
+				@include border-radius(5px);
+				padding: 10px 0px;
+			}
+			.row2 {
+				width: 100%;
+				font-size: 0px;
+				div {
+					font-size: 20px;
+					width: 45%;
+					display: inline-block;
+					background-color: rgba(38, 75, 122, 0.55);
+					margin: 0px 2px;
+					@include border-radius(5px);
+					padding: 10px 0px;
+					span {
+						display: block;
+						font-size: 12px;
+						font-variant: small-caps;
+						text-shadow: none;
+					}
+				}
+			}
+			.row3 {
+				width: 100%;
+				font-size: 0px;
+				div {
+					font-size: 20px;
+					width: 20%;
+					display: inline-block;
+					background-color: rgba(38, 75, 122, 0.55);
+					margin: 0px 2px;
+					@include border-radius(5px);
+					padding: 10px 0px;
+					span {
+						display: block;
+						font-size: 12px;
+						line-height: 15px;
+						font-variant: small-caps;
+						text-shadow: none;
+					}
+				}
+			}
+		}
+	}
+
+	&.experience {
+		overflow: hidden;
+		#left_angled_bar {
+			@include position(absolute, 150px 0 0 0px);
+			line-height: 45px;
+			width: 60%;
+			padding-left: 20px;
+			padding-right: 20px;
+			font-variant: small-caps;
+			@include transform(rotate(-7deg));
+			@include transform-origin(left bottom);
+			@include border-radius(0px 10px 10px 0px);
+			background-color: #F1F1F1;
+			color: #2E2E2E;
+			text-align: right;
+			//font-family: 'QlassikMediumRegular';
+			font-family: 'VeggieBurgerRegular';
+			font-size: 18px;
+		}
+		#right_angled_bar {
+			font-family: 'QlassikMediumRegular';
+			@include position(absolute, 85px -2px 0 0);
+			line-height: 35px;
+			width: 60%;
+			padding-left: 20px;
+			padding-right: 20px;
+			border: 2px solid #F1F1F1;
+			@include border-radius(10px 0px 0px 10px);
+			@include transform(rotate(-7deg));
+			@include transform-origin(right top);
+			font-variant: small-caps;
+			color: #F1F1F1;
+			text-align: left;
+		}
+		#timeframe {
+			font-family: $verdana;
+			@include position(absolute, 120px 0 0 -2px);
+			line-height: 35px;
+			width: 20%;
+			padding-left: 35px;
+			padding-right: 20px;
+			@include transform(rotate(-7deg));
+			@include transform-origin(left bottom);
+			font-variant: small-caps;
+			color: #F1F1F1;
+			text-align: left;
+			font-size: 12px;
+		}
+		#job_details {
+			margin: 150px 0px auto;
+			.left_pane {
+				display: inline-block;
+				width: 20%;
+				#timeframe {
+					font-family: 'QlassikMediumRegular';
+					margin: 10px;
+				}
+				.experience_btn {
+					margin: 10px;
+				}
+			}
+			.right_pane {
+				display: inline-block;
+				width: 75%;
+				ul {
+					font-size: 11px;
+					font-family: $verdana;
+					text-align: left;
+				}
+			}
+		}
+	}
+
+	&.portfolio {
+		padding: 0px;
+		width: 940px;
+		height: 490px;
+		overflow: hidden;
+	
+		#page_content {
+			@include box-shadow(0 0 12px #000);
+			#sites {
+				margin: 0;
+				li.slide {
+					@include box-shadow(0 0 12px #000);
+				}
+				.tab {
+					@include position(absolute, 0 0 0px 0px);
+					height: 460px;
+					width: 70px;
+					&.first { @include linear-gradient(left, darken(rgba(27,68,111, 1), 5%), rgba(27,68,111,1)); }
+					&.second { @include linear-gradient(left, lighten(rgba(27,68,111, 1), 10%), lighten(rgba(27,68,111, 1), 15%)); }
+					&.third { @include linear-gradient(left, lighten(rgba(27,68,111, 1), 20%), lighten(rgba(27,68,111, 1), 25%)); }
+					&.fourth { @include linear-gradient(left, lighten(rgba(27,68,111, 1), 30%), lighten(rgba(27,68,111, 1), 35%)); }
+				}
+				.site_info {
+					display: none;
+					background-color: rgba(0, 0, 0, 0.8);
+					@include position(absolute, 0px 0 0 70px);
+					width: 325px;
+					height: 440px;
+					padding: 10px;
+					text-align: left;
+					font-size: 14px;
+					font-family: 'QlassikMediumRegular';
+					&:hover .close_btn {
+						visibility: visible;
+						&:hover {
+							cursor: pointer;
+						}
+					}
+					.close_btn {
+						@include position(absolute, 10px 10px 0 0);
+						visibility: hidden;
+					}
+					h3 {
+						margin: 4px 0px 2px;
+						font-family: 'ExoExtraLight';
+						text-shadow: 0px 2px 20px #FFEEA3;
+					}
+					a {
+						color: #B0B0B0;
+						text-decoration: none;
+						&:hover {
+							text-decoration: underline;
+							color: #ffffff;
+						}
+					}
+					.info_section {
+						margin-top: 10px;
+					}
+					.info_label {
+						color: #B0B0B0;
+						font-size: 12px;
+						font-variant: small-caps;
+						display: block;
+					}
+					p {
+						margin: 0px;
+					}
+					.github_url {
+						margin: 15px 0px;
+						display: block;
+					}
+				}
+				.site_labels {
+					@include position(absolute, 0 25px 10px 0);
+					color: #FFFFFF;
+					font-size: 16px;
+					img, div {
+						margin-left: 10px;
+						padding: 10px;
+						display: inline-block;
+						background-color: rgba(0, 0, 0, 0.8);
+						border-radius: 15px;
+						float: left;
+					}
+					.site_label {
+						font-family: 'ExoDemiBold';
+						small {
+							font-family: 'ExoLight';
+						}
+					}
+					.site_info_btn {
+						&:hover { 
+							cursor: pointer;
+							@include box-shadow(0 0 3px 3px rgba(255, 255, 255, 0.65) inset); 
+						}
+					}
+				}
+			}
+		}
+		#page_header {
+			height: 30px;
+			line-height: 30px;
+			@include position(absolute, 0 0 0px 0);
+			width: 940px;
+			.small_logo {
+				@include position(absolute, 0 0 0 15px);
+				font-size: 24px;
+				font-family: 'JennaSueRegular';
+				text-shadow: 0px 2px 15px #0682C4;
+			}
+			.page_header_title {
+				@include position(absolute, 0 35px 0 0);
+				font-size: 18px;
+			}
+			#home_btn {
+				@include position(absolute, 5px 7px 0 0);
+			}
+		}
+	}
+}
+

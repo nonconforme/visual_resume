@@ -1,0 +1,31 @@
+<%= image_tag 'home.png', :id => 'home_btn', :size => '20x20' %>
+<section id="page_header">
+  <div class="page_header_title">Contact</div>
+  <div class="page_header_separator">JI</div>
+</section>
+<section id="page_content">
+  <div id="contact_form_container">
+    <%= form_tag('/contact', :remote => true) do %>
+      <div class="row">
+        <div class="cell label">Name*</div>
+        <div class="cell input"><%= text_field_tag 'contact[name]', nil, :required => '' %></div>
+      </div>
+      <div class="row">
+        <div class="cell label">Email*</div>
+        <div class="cell input"><%= email_field_tag 'contact[email]', nil, :required => '' %></div>
+      </div>
+      <div class="row">
+        <div class="cell label">Company</div>
+        <div class="cell input"><%= text_field_tag 'contact[company]' %></div>
+      </div>
+      <div class="text_area_row">
+        <div class="cell label">Message</div>
+        <div class="cell input"><%= text_area_tag 'contact[message]', nil, :size => '100x5' %></div>
+      </div>
+      <div class="submit_row">
+        <div class="cell label"></div>
+        <div class="cell input"><%= submit_tag "Send", :id => "submit", :name => "submit", :class => "form_submit" %></div>
+      </div>
+    <% end -%>
+  </div>
+</section>
