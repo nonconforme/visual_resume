@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.ui.all
-//= require jqcloud
 //= require jquery.tagcanvas
 //= require jquery.zaccordion
 //= require jquery.flippy.min

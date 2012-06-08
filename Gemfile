@@ -23,8 +23,8 @@ end
 gem 'coffee-rails', '~> 3.2.1'
 gem 'jquery-rails'
 gem 'bourbon'
-gem 'jqcloud-rails'
 gem 'font_assets'
+gem 'exception_notification'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
