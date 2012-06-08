@@ -21,6 +21,9 @@ jQuery ->
 		$('#logo').one 'click', stepOne
 		
 	initPushState()
+	
+	$('#throbbler_container').ajaxComplete ->
+		$(this).hide()
 
 initPushState = ->
 	if pstateAvailable
@@ -82,7 +85,11 @@ takeover = ->
 	$('.block, .small_block_left, .small_block_right').not(this).each ->
 		$(this).fadeOut(1000) 
 	$(this).addClass("#{$(this).data('page')}_bg")
+	setTimeout ( ->
+		$('#throbbler_container').fadeIn()
+	), 1000
 	$(this).addClass('highest_box').addClass('takeover', 2000, 'easeOutBounce', ->
+		
 		$('#page').addClass($(this).data('page'))
 		$('.page_header_title').one('click', returnToNormal)
 		$('.block, .small_block_left, .small_block_right').toggleClass 'outline' if window.initialLoad is 0
