@@ -17,3 +17,4 @@ $('.slide').each ->
 		$('.site_info', this).toggle('slide', { direction: 'left', easing: 'easeOutExpo' })
 	
 document.title = "Nick J. Reed | Portfolio"
+window.initTooltip()

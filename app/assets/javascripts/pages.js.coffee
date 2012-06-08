@@ -9,7 +9,6 @@ reset = false
 jQuery -> 
 	$('#sublogo').hide()
 	$('#home_btn').hide().live 'click', returnToNormal
-	window.corners = '.p1, .p3, .p7, .p9'
 	$('.block, .small_block_left, .small_block_right').each ->
 		$(this).contents().hide()
 	
@@ -48,22 +47,22 @@ stepOne = ->
 stepTwo = ->
 	$('#p6').switchClass 'p5', 'p6', 2000, 'easeOutElastic', ->
 		$(this).contents().fadeIn()
-	setTimeout(stepThree, 400)
+	setTimeout stepThree, 400
 
 stepThree = ->
 	$('#p8').switchClass 'p1', 'p8', 2000, 'easeOutElastic', ->
 		$(this).contents().fadeIn()
-	setTimeout(stepFour, 400)
+	setTimeout stepFour, 400
 
 stepFour = ->
 	$('#p2').switchClass 'p1', 'p2', 2000, 'easeOutElastic', ->
 		$(this).contents().fadeIn()
-	setTimeout(stepFive, 400)
+	setTimeout stepFive, 400
 		
 stepFive = ->
 	$('#p4').switchClass 'p5', 'p4', 2000, 'easeOutElastic', ->
 		$(this).contents().fadeIn()
-	setTimeout(stepSix, 1000)
+	setTimeout stepSix, 1000
 	
 stepSix = ->
 	pageBlock(currentPage()).unbind('click')
@@ -71,7 +70,7 @@ stepSix = ->
 	setTimeout ( ->  
 		toggleSublogo('show')
 	), 1000
-	setInterval(rotate, 60000)
+	setInterval rotate, 60000
 	$('#logo').bind 'click', rotate
 
 toggleSublogo = (action) -> 
@@ -80,15 +79,11 @@ toggleSublogo = (action) ->
 				
 takeover = ->
 	$('.block_label', this).fadeOut(500) if window.initialLoad is 0
-	#$('#page_content').hide() if window.initialLoad is 1
-	#$('.page_header_title').text($('.block_label', this).text())
 	$('.block, .small_block_left, .small_block_right').not(this).each ->
-		$(this).fadeOut(1000) #if window.initialLoad = 0
+		$(this).fadeOut(1000) 
 	$(this).addClass("#{$(this).data('page')}_bg")
-	#$(this).addClass('education_bg') if $(this).data('page') is "education"
-	#$(this).addClass('experience_bg') if $(this).data('page') is "experience"
 	$(this).addClass('highest_box').addClass('takeover', 2000, 'easeOutBounce', ->
-		$('#page').addClass($(this).data('page')) #.fadeIn()
+		$('#page').addClass($(this).data('page'))
 		$('.page_header_title').one('click', returnToNormal)
 		$('.block, .small_block_left, .small_block_right').toggleClass 'outline' if window.initialLoad is 0
 		$.getScript($(this).data('url'))
@@ -96,22 +91,29 @@ takeover = ->
 		$('#home_btn').toggle('fade', 1000)
 	)
 	
-	if $(this).data('page') is 'portfolio'
-		$('#p0').animate(
-			top: '+=255px'
-			fontSize: '54px'
-			opacity: 0,
-			2000
-		)
-	else
-		$('#p0').animate(
-			top: '+=255px'
-			fontSize: '54px',
-			2000,
-			'easeOutBounce'
-		)
+	moveLogo($(this).data('page'))
+	$('#logo').unbind('click').bind 'click', returnToNormal
 	
 
+moveLogo = (page) ->
+	switch page
+		when 'home'
+			options = {top: '-=255px', left: '320px', fontSize: '72px', opacity: 1 }
+			speed = 1000
+			easing = ''
+		when 'about'
+			options = {top: '+=255', left: '790px', fontSize: '54px'}
+			speed = 2000
+			easing = 'easeOutBack'
+		when 'portfolio' 
+			options = {top: '+=255px', fontSize: '54px', opacity: 0}
+			speed = 2000
+			easing = ''
+		else 
+			options = {top: '+=255px', fontSize: '54px'}
+			speed = 2000
+			easing = 'easeOutBack'
+	$('#p0').animate options, speed, easing
 		
 returnToNormal = ->
 	$('#page_content').empty().hide()
@@ -129,12 +131,8 @@ returnToNormal = ->
 		stepOne() if window.initialLoad is 1
 		window.initialLoad = 0
 	)
-	$('#p0').animate(
-		top: '-=255px'
-		fontSize: '72px'
-		opacity: 1,
-		1000
-	)	
+	moveLogo('home')
+	$('#logo').unbind('click').bind 'click', rotate
 
 	
 rotate = ->
@@ -147,4 +145,6 @@ rotate = ->
 				.switchClass(p, p1, 1000)
 				.switchClass(p1, p2, 1000)
 		
+window.initTooltip = (id = "home_btn") ->
+	$('#' + id).tooltip({placement: 'right'})
 	

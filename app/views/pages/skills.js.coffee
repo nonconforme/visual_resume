@@ -13,6 +13,7 @@ showWordCloud = (id) ->
 		shadowBlur: 15,
 		frontSelect: true,
 		outlineOffset: 1,
+		outlineMethod: 'colour',
 		minSpeed: .003,
 		reverse: true,
 		textFont: '' }, id)
@@ -20,13 +21,16 @@ showWordCloud = (id) ->
 window.loadTagCanvas()
 
 $('a', '#skills_categories').click ->
-	$('#active_skill_category').text($(this).text())
-	$('#back_to_categories').fadeIn()
-	showWordCloud $(this).data('target')
+	$('#word_cloud').fadeOut(500, =>
+		$('#active_skill_category').text($(this).text())
+		$('#back_to_categories').fadeIn()
+		showWordCloud $(this).data('target')
+		$('#word_cloud').fadeIn(1000)
+	)
 	false
 
 $('a', '.category').click (e) -> e.preventDefault() if $(this).attr('href') is '#'
- 	
+	
 showWordCloud 'skills_categories'
 
 $('#back_to_categories').hide().click ->
@@ -34,4 +38,4 @@ $('#back_to_categories').hide().click ->
 	$(this).hide()
 	showWordCloud 'skills_categories'
 	
-
+window.initTooltip()

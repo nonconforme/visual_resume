@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Nickjreed::Application.load_tasks
+VisualResume::Application.load_tasks

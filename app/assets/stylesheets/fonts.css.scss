@@ -1,14 +1,14 @@
 @include font-face(JennaSueRegular, 'JennaSue/JennaSue-webfont');
 @include font-face(DesyrelRegular, 'Desyrel/desyrel-webfont');
 @include font-face(ArtifikaMedium, 'Artifika/Artifika-Regular-webfont');
-@include font-face(SixCapsRegular, 'SixCaps/SixCaps-webfont');
-@include font-face(VeggieburgerLight, 'Veggieburger/VeggiLig-webfont');
+//@include font-face(SixCapsRegular, 'SixCaps/SixCaps-webfont');
+//@include font-face(VeggieburgerLight, 'Veggieburger/VeggiLig-webfont');
 @include font-face(VeggieburgerRegular, 'Veggieburger/VeggiMed-webfont');
-@include font-face(VeggieburgerBold, 'Veggieburger/VeggiBol-webfont');
+//@include font-face(VeggieburgerBold, 'Veggieburger/VeggiBol-webfont');
 @include font-face(QlassikMediumRegular, 'Qlassik/Qlassik_TB-webfont');
-@include font-face(QlassikBoldRegular, 'Qlassik/QlassikBold_TB-webfont');
-@include font-face(VeggieburgerBold, 'Veggieburger/VeggiBol-webfont');
-@include font-face(DaysRegular, 'Days/Days-webfont');
+//@include font-face(QlassikBoldRegular, 'Qlassik/QlassikBold_TB-webfont');
+//@include font-face(VeggieburgerBold, 'Veggieburger/VeggiBol-webfont');
+//@include font-face(DaysRegular, 'Days/Days-webfont');
 @include font-face(PacificoRegular, 'Pacifico/Pacifico-webfont');
 @include font-face(NymphetteRegular, 'Nymphette/Nymphette-webfont');
 //@include font-face(ExoThin, 'Exo/Exo-Thin-webfont');
@@ -20,7 +20,7 @@
 @include font-face(ExoRegular, 'Exo/Exo-Regular-webfont');
 //@include font-face(ExoRegularItalic, 'Exo/Exo-Regular-Italic-webfont');
 //@include font-face(ExoMedium, 'Exo/Exo-Medium-webfont');
-//@include font-face(ExoMediumItalic, 'Exo/Exo-Medium-Italic-webfont');
+@include font-face(ExoMediumItalic, 'Exo/Exo-Medium-Italic-webfont');
 @include font-face(ExoDemiBold, 'Exo/Exo-DemiBold-webfont');
 //@include font-face(ExoDemiBoldItalic, 'Exo/Exo-DemiBold-Italic-webfont');
 //@include font-face(ExoBold, 'Exo/Exo-Bold-webfont');
@@ -33,5 +33,7 @@
 //@include font-face(CantarellOblique, 'Cantarell/Cantarell-Oblique-webfont');
 //@include font-face(CantarellBold, 'Cantarell/Cantarell-Bold-webfont');
 //@include font-face(CantarellBoldOblique, 'Cantarell/Cantarell-BoldOblique-webfont');
-
-
+//@include font-face(YanoneKaffeesatzThin, 'YanoneKaffeesatz/YanoneKaffeesatz-Thin-webfont');
+@include font-face(YanoneKaffeesatzLight, 'YanoneKaffeesatz/YanoneKaffeesatz-Light-webfont');
+@include font-face(YanoneKaffeesatzRegular, 'YanoneKaffeesatz/YanoneKaffeesatz-Regular-webfont');
+//@include font-face(YanoneKaffeesatzBold, 'YanoneKaffeesatz/YanoneKaffeesatz-Bold-webfont');

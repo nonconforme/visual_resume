@@ -6,3 +6,4 @@ $('.row1', '#education_content').show('slide', {direction: 'right'}, 1000, ->
 )
 
 document.title = "Nick J. Reed | Education"
+window.initTooltip()

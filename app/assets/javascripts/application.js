@@ -16,4 +16,6 @@
 //= require jqcloud
 //= require jquery.tagcanvas
 //= require jquery.zaccordion
+//= require jquery.flippy.min
+//= require bootstrap.min
 //= require_tree .

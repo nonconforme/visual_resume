@@ -6,6 +6,6 @@ class PagesController < ApplicationController
   
   def contact
     AdminMailer.contact(params['contact']).deliver
-    render :text => 'yes'
+    render 'contact_submission'
   end
 end

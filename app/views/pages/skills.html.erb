@@ -1,4 +1,4 @@
-<%= image_tag 'home.png', :id => 'home_btn', :size => '20x20' %>
+<%= image_tag 'home.png', :id => 'home_btn', :size => '20x20', :title => 'Go back to the home page' %>
 <section id="page_header">
   <div class="page_header_title">Skills</div>
   <div class="page_header_separator">JI</div>
@@ -11,140 +11,15 @@
     <canvas id="word_cloud" width="900" height="300"></canvas>
   </div>
   <div id="back_to_categories">
-    <-- Back
+    <%= image_tag "arrow-left.png", :id => "back_btn", :size => '25x25' %> 
+    <div>Show Categories</div>
   </div>
   <div id="skills_categories" class="hidden">
-    <ul>
-  		<li><a href="#" data-weight="32" data-target="languages">Languages</a></li>
-  		<li><a href="#" data-weight="30" data-target="systems">Systems</a></li>
-  		<li><a href="#" data-weight="32" data-target="databases">Databases</a></li>
-  		<li><a href="#" data-weight="32" data-target="sysadmintools">System Admin Tools</a></li>
-  		<li><a href="#" data-weight="32" data-target="developmenttools">Development Tools</a></li>
-  		<li><a href="#" data-weight="32" data-target="services">Services</a></li>
-  		<li><a href="#" data-weight="32" data-target="webservers_frameworks">Webservers & Frameworks</a></li>
-  		<li><a href="#" data-weight="32" data-target="software">Software</a></li>
-  	</ul>
+    <%= render :partial => 'skills_categories' %>
   </div>
-  <div id="languages" class="hidden category">
-    <ul>
-  		<li><a href="#" data-weight="28">HTML5</a></li>
-  		<li><a href="#" data-weight="28">Haml</a></li>
-  		<li><a href="#" data-weight="28">CSS3</a></li>
-  		<li><a href="#" data-weight="28">Sass & SCSS</a></li>
-  		<li><a href="#" data-weight="32">Ruby</a></li>
-  		<li><a href="#" data-weight="32">Ruby on Rails</a></li>
-  		<li><a href="#" data-weight="22">PHP</a></li>
-  		<li><a href="#" data-weight="26">JavaScript</a></li>
-  		<li><a href="#" data-weight="26">jQuery</a></li>
-  		<li><a href="#" data-weight="26">CoffeeScript</a></li>
-  		<li><a href="#" data-weight="22">SQL</a></li>
-  		<li><a href="#" data-weight="14">Visual Basic</a></li>
-  		<li><a href="#" data-weight="13">Java</a></li>
-  		<li><a href="#" data-weight="20">VBScript</a></li>
-  		<li><a href="#" data-weight="20">PowerShell</a></li>
-  		<li><a href="#" data-weight="19">Bash</a></li>
-  		<li><a href="#" data-weight="12">C</a></li>
-  		<li><a href="#" data-weight="11">C#</a></li>
-  		<li><a href="#" data-weight="14">Haskell</a></li>
-  	</ul>
-  </div>
-  <div id="systems" class="hidden category">
-    <ul>
-  		<li><a href="#" data-weight="26">Windows XP</a></li>
-  		<li><a href="#" data-weight="28">Windows Vista</a></li>
-  		<li><a href="#" data-weight="30">Windows 7</a></li>
-  		<li><a href="#" data-weight="28">Windows Server 2003</a></li>
-  		<li><a href="#" data-weight="30">Windows Server 2008</a></li>
-  		<li><a href="#" data-weight="26">Mac OS X 10.5 Leopard</a></li>
-  		<li><a href="#" data-weight="28">Mac OS X 10.6 Snow Leopard</a></li>
-  		<li><a href="#" data-weight="30">Mac OS X 10.7 Lion</a></li>
-  		<li><a href="#" data-weight="30">Mac OS X Server</a></li>
-  		<li><a href="#" data-weight="24">UNIX</a></li>
-  		<li><a href="#" data-weight="26">Red Hat Enterprise 5</a></li>
-  		<li><a href="#" data-weight="26">Ubuntu</a></li>
-  		<li><a href="#" data-weight="24">Debian</a></li>
-  		<li><a href="#" data-weight="26">GNOME 3</a></li>
-  	</ul>
-  </div>
-  <div id="databases" class="hidden category">
-    <ul>
-  		<li><a href="#" data-weight="28">Oracle</a></li>
-  		<li><a href="#" data-weight="32">MySQL</a></li>
-  		<li><a href="#" data-weight="32">SQLite</a></li>
-  		<li><a href="#" data-weight="30">Microsoft SQL Server</a></li>
-  		<li><a href="#" data-weight="32">PostgreSQL</a></li>
-  		<li><a href="#" data-weight="28">Microsoft Access</a></li>
-  		<li><a href="#" data-weight="24">MongoDB</a></li>
-  		<li><a href="#" data-weight="24">Redis</a></li>
-  		<li><a href="#" data-weight="24">CouchDB</a></li>
-  	</ul>
-  </div>
-  <div id="sysadmintools" class="hidden category">
-    <ul>
-  		<li><a href="#" data-weight="30">Active Directory</a></li>
-  		<li><a href="#" data-weight="30">Group Policy</a></li>
-  		<li><a href="#" data-weight="28">Windows Deployment Services</a></li>
-  		<li><a href="#" data-weight="30">VMware vSphere</a></li>
-  		<li><a href="#" data-weight="32">VMware View</a></li>
-  		<li><a href="#" data-weight="26">VMware ThinApp</a></li>
-  		<li><a href="#" data-weight="26">VMware Workstation</a></li>
-  		<li><a href="#" data-weight="26">Symantec Ghost</a></li>
-  		<li><a href="#" data-weight="28">Sassafras KeyServer</a></li>
-  		<li><a href="#" data-weight="28">CLS LabStats</a></li>
-  		<li><a href="#" data-weight="32">Apple Remote Desktop</a></li>
-  		<li><a href="#" data-weight="32">OS X Server Admin Tools</a></li>
-  		<li><a href="#" data-weight="28">OS X Workgroup Manager</a></li>
-  		<li><a href="#" data-weight="28">Open Directory</a></li>
-  		<li><a href="#" data-weight="32">DeployStudio</a></li>
-  		<li><a href="#" data-weight="26">Puppet</a></li>
-  		<li><a href="#" data-weight="26">Foreman</a></li>
-  	</ul>
-  </div>
-  <div id="software" class="hidden category">
-    <ul>
-  		<li><a href="#" data-weight="32">Microsoft Office</a></li>
-  		<li><a href="#" data-weight="28">Microsoft Visual Studio</a></li>
-  		<li><a href="#" data-weight="26">Avid</a></li>
-  		<li><a href="#" data-weight="22">Sony ACID Pro</a></li>
-  		<li><a href="#" data-weight="28">Adobe Photoshop</a></li>
-  		<li><a href="#" data-weight="28">Adobe Illustrator</a></li>
-  		<li><a href="#" data-weight="28">Adobe Fireworks</a></li>
-  		<li><a href="#" data-weight="28">Adobe AfterEffects</a></li>
-  		<li><a href="#" data-weight="30">SAPIEN PrimalScript</a></li>
-  		<li><a href="#" data-weight="32">TextMate</a></li>
-  	</ul>
-  </div>
-  <div id="webservers_frameworks" class="hidden category">
-    <ul>
-  		<li><a href="#" data-weight="32">Ruby on Rails</a></li>
-  		<li><a href="#" data-weight="25">Backbone.js</a></li>
-  		<li><a href="#" data-weight="23">Node.js</a></li>
-  		<li><a href="#" data-weight="31">IIS</a></li>
-  		<li><a href="#" data-weight="30">Apache</a></li>
-  		<li><a href="#" data-weight="29">Thin</a></li>
-  		<li><a href="#" data-weight="28">Phusion Passenger</a></li>
-  		<li><a href="#" data-weight="27">WEBrick</a></li>
-  		<li><a href="#" data-weight="27">nginx</a></li>
-  	</ul>
-  </div>
-  <div id="developmenttools" class="hidden category">
-    <ul>
-  		<li><a href="#" data-weight="32">RVM</a></li>
-  		<li><a href="#" data-weight="32">rbenv</a></li>
-  		<li><a href="#" data-weight="32">Git</a></li>
-  		<li><a href="#" data-weight="30">RSpec</a></li>
-  		<li><a href="#" data-weight="28">Capistrano</a></li>
-  	</ul>
-  </div>
-  <div id="services" class="hidden category">
-    <ul>
-  		<li><a href="#" data-weight="32">GitHub</a></li>
-  		<li><a href="#" data-weight="32">Heroku</a></li>
-  		<li><a href="#" data-weight="28">Amazon S3</a></li>
-  		<li><a href="#" data-weight="26">New Relic</a></li>
-  		<li><a href="#" data-weight="28">DNSimple</a></li>
-  		<li><a href="#" data-weight="30">Twitter API</a></li>
-  		<li><a href="#" data-weight="30">YouTube API</a></li>
-  	</ul>
-  </div>
+  <% %w[languages systems databases sysadmintools software webservers_frameworks developmenttools services].each do |category| %>
+    <div id="<%= category %>" class="hidden category">
+      <%= render :partial => "skills_#{category}" %>
+    </div>
+  <% end %>
 </section>
