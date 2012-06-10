@@ -26,6 +26,7 @@
 		cursor: pointer;
 	}
 	&.about {
+		overflow: hidden;
 		#page_header {
 			position: absolute;
 		}
@@ -44,7 +45,7 @@
 			}
 			p {
 				font-family: 'ArtifikaMedium';
-				font-size: 14px;
+				font-size: 13px;
 				a {
 					color: #8DCBE3;
 					text-decoration: none;

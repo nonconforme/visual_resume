@@ -3,7 +3,9 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 pstateAvailable = (history && history.pushState)
 initialURL = location.href
+pushed = false
 popped = false
+popAction = false
 reset = false
 
 jQuery -> 
@@ -15,7 +17,9 @@ jQuery ->
 	if directToPage()
 		window.initialLoad = 1
 		$('.initial_hover').removeClass 'initial_hover'
-		pageBlock(currentPage()).one('click', takeover).click()
+		setTimeout ( ->
+			pageBlock(currentPage()).one('click', takeover).click()
+		), 200
 	else
 		window.initialLoad = 0
 		$('#logo').one 'click', stepOne
@@ -28,16 +32,16 @@ jQuery ->
 initPushState = ->
 	if pstateAvailable
 		$(window).bind "popstate", ->
-			if location.href == initialURL and not popped then return
-			popped = true
-			$.getScript(location.href)
+			if location.href == initialURL and not pushed then return
+			popAction = true
+			if location.pathname is '/' then returnToNormal() else pageBlock(location.pathname).click()
 		
 	
 directToPage = -> currentPage() isnt 'home' and $('.p0[data-page="' + currentPage() + '"]').size() is 1
 	
-currentPage = -> $('#main').data('current-page')
+currentPage = (page) -> if page? then $('#main').data('current-page', page) else $('#main').data('current-page') 
 
-pageBlock = (page) -> $('[data-page="' + page + '"]')
+pageBlock = (page) -> $('[data-page="' + page + '"], [data-url="' + page + '"]')
 	
 stepOne = ->
 	$('.initial_hover').removeClass 'initial_hover'
@@ -68,7 +72,8 @@ stepFive = ->
 	setTimeout stepSix, 1000
 	
 stepSix = ->
-	pageBlock(currentPage()).unbind('click')
+	#pageBlock(currentPage()).unbind('click')
+	$('.block, .small_block_left, .small_block_right').unbind('click')
 	$('.block, .small_block_left, .small_block_right').one('click', takeover)
 	setTimeout ( ->  
 		toggleSublogo('show')
@@ -89,13 +94,15 @@ takeover = ->
 		$('#throbbler_container').fadeIn()
 	), 1000
 	$(this).addClass('highest_box').addClass('takeover', 2000, 'easeOutBounce', ->
-		
 		$('#page').addClass($(this).data('page'))
 		$('.page_header_title').one('click', returnToNormal)
 		$('.block, .small_block_left, .small_block_right').toggleClass 'outline' if window.initialLoad is 0
 		$.getScript($(this).data('url'))
-		history.pushState(null, document.title, $(this).data('url')) if pstateAvailable and window.initialLoad is 0
+		currentPage($(this).data('page'))
+		history.pushState(null, document.title, $(this).data('url')) if pstateAvailable and window.initialLoad is 0 and not popAction
 		$('#home_btn').toggle('fade', 1000)
+		popAction = false
+		pushed = true
 	)
 	
 	moveLogo($(this).data('page'))
@@ -127,13 +134,15 @@ returnToNormal = ->
 	$('#page, #home_btn').hide()
 	$('#page').removeClass($('.takeover').data('page'))
 	$('#p0').addClass 'initial_hover' if window.initialLoad is 1
-	#$('.block_label', '.takeover').fadeOut(500)
-	history.pushState(null, document.title, '/') if pstateAvailable
+	currentPage('home')
+	history.pushState(null, document.title, '/') if pstateAvailable and not popAction
 	document.title = "Nick J. Reed"
+	popAction = false
+	pushed = true
 	$('.block, .small_block_left, .small_block_right').not(this).each ->
-		$(this).fadeIn(1000) #if window.initialLoad is 0
+		$(this).fadeIn(1000) 
 	$('.takeover').removeClass('takeover', 1000, ->
-		$(this).removeClass('highest_box education_bg').one('click', takeover)
+		$(this).removeClass('highest_box education_bg').unbind('click').one('click', takeover)
 		$('.block_label', this).fadeIn() if window.initialLoad is 0
 		stepOne() if window.initialLoad is 1
 		window.initialLoad = 0
