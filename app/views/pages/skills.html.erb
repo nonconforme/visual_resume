@@ -15,11 +15,11 @@
     <div>Show Categories</div>
   </div>
   <div id="skills_categories" class="hidden">
-    <%= render :partial => 'skills_categories' %>
+    <%= render :partial => 'categories' %>
   </div>
   <% %w[languages systems databases sysadmintools software webservers_frameworks developmenttools services].each do |category| %>
     <div id="<%= category %>" class="hidden category">
-      <%= render :partial => "skills_#{category}" %>
+      <%= render :partial => category %>
     </div>
   <% end %>
 </section>
