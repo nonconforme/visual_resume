@@ -79,7 +79,7 @@ stepSix = ->
 		toggleSublogo('show')
 	), 1000
 	setInterval rotate, 60000
-	$('#logo').bind 'click', rotate
+	$('#logo').unbind('click').bind 'click', rotate
 
 toggleSublogo = (action) -> 
 	$('#sublogo').show('slide', direction: 'up') if action is 'show'
