@@ -44,42 +44,41 @@ currentPage = (page) -> if page? then $('#main').data('current-page', page) else
 pageBlock = (page) -> $('[data-page="' + page + '"], [data-url="' + page + '"]')
 	
 stepOne = ->
-	$('.initial_hover').removeClass 'initial_hover'
-	$('#p1, #p2, #p8').switchClass 'p0', 'p1', 1000, ->
-		$('#p1').contents().fadeIn()
-	$('#p4, #p5, #p6').switchClass 'p0', 'p5', 1000, ->
-		$('#p5').contents().fadeIn()
-	setTimeout stepTwo, 1000
-	
+  $('.initial_hover').removeClass 'initial_hover'
+  $('#p1, #p2, #p8').switchClass 'p0', 'p1', 1000, ->
+    $('.block_label', this).fadeIn() if $(this).attr('id') is 'p1'
+  $('#p4, #p5, #p6').switchClass 'p0', 'p5', 1000, ->
+    $('.block_label', this).fadeIn() if $(this).attr('id') is 'p5'
+  setTimeout stepTwo, 1000
+
 stepTwo = ->
-	$('#p6').switchClass 'p5', 'p6', 2000, 'easeOutElastic', ->
-		$(this).contents().fadeIn()
-	setTimeout stepThree, 400
+  $('#p6').switchClass 'p5', 'p6', 2000, 'easeOutElastic', ->
+    $('.block_label', this).fadeIn()
+  setTimeout stepThree, 400
 
 stepThree = ->
-	$('#p8').switchClass 'p1', 'p8', 2000, 'easeOutElastic', ->
-		$(this).contents().fadeIn()
-	setTimeout stepFour, 400
+  $('#p8').switchClass 'p1', 'p8', 2000, 'easeOutElastic', ->
+    $('.block_label', this).fadeIn()
+  setTimeout stepFour, 400
 
 stepFour = ->
-	$('#p2').switchClass 'p1', 'p2', 2000, 'easeOutElastic', ->
-		$(this).contents().fadeIn()
-	setTimeout stepFive, 400
-		
+  $('#p2').switchClass 'p1', 'p2', 2000, 'easeOutElastic', ->
+    $('.block_label', this).fadeIn()
+  setTimeout stepFive, 400
+
 stepFive = ->
-	$('#p4').switchClass 'p5', 'p4', 2000, 'easeOutElastic', ->
-		$(this).contents().fadeIn()
-	setTimeout stepSix, 1000
-	
+  $('#p4').switchClass 'p5', 'p4', 2000, 'easeOutElastic', ->
+    $('.block_label', this).fadeIn()
+  setTimeout stepSix, 1000
+
 stepSix = ->
-	#pageBlock(currentPage()).unbind('click')
-	$('.block, .small_block_left, .small_block_right').unbind('click')
-	$('.block, .small_block_left, .small_block_right').one('click', takeover)
-	setTimeout ( ->  
-		toggleSublogo('show')
-	), 1000
-	setInterval rotate, 60000
-	$('#logo').unbind('click').bind 'click', rotate
+  $('.block, .small_block_left, .small_block_right').unbind('click')
+  $('.block, .small_block_left, .small_block_right').one('click', takeover)
+  setTimeout ( ->  
+    toggleSublogo('show')
+  ), 1000
+  setInterval rotate, 60000
+  $('#logo').unbind('click').bind 'click', rotate
 
 toggleSublogo = (action) -> 
 	$('#sublogo').show('slide', direction: 'up') if action is 'show'
