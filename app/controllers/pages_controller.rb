@@ -1,6 +1,8 @@
 class PagesController < ApplicationController
   before_filter :validate_page, :only => :home
   
+  caches_action :home
+  
   def home
     render @page
   end
