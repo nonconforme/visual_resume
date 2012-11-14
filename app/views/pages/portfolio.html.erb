@@ -1,220 +1,222 @@
-<section id="page_content">
-  <ul id="sites">
-    <li>
-      <%= image_tag "nickjreed.png", :title => "Nick J. Reed", :class => "site", :size => "760x460" %>
-      <div class="tab first"></div>
-      <div class="site_info">
-        <h3>Resum&eacute; (this site)</h3>
-        <a class="site_url" href="http://resume.nickjreed.com" target="_blank">resume.nickjreed.com</a>
-        <div class="info_section">
-          <div class="info_label">My Roles</div>
-          <ul>
-            <li>Designer</li>
-            <li>Developer</li>
-          </ul>
-        </div>
-        <div class="info_section">
-          <div class="info_label">Primary Languages</div>
-          <ul>
-            <li>Ruby on Rails</li>
-            <li>Sass</li>
-            <li>CoffeeScript + jQuery</li>
-          </ul>
-        </div>
-        <div class="info_section">
-          <div class="info_label">Database</div>
-          <ul>
-            <li>PostgreSQL</li>
-          </ul>
-        </div>
-        <div class="info_section">
-          <div class="info_label">Services</div>
-          <ul>
-            <li>Deployed to <a href="http://heroku.com" target="_blank">Heroku</a></li>
+<% cache do %>
+  <section id="page_content">
+    <ul id="sites">
+      <li>
+        <%= image_tag "nickjreed.png", :title => "Nick J. Reed", :class => "site", :size => "760x460" %>
+        <div class="tab first"></div>
+        <div class="site_info">
+          <h3>Resum&eacute; (this site)</h3>
+          <a class="site_url" href="http://resume.nickjreed.com" target="_blank">resume.nickjreed.com</a>
+          <div class="info_section">
+            <div class="info_label">My Roles</div>
             <ul>
-              <li>SMTP mail via <a href="http://sendgrid.com" target="_blank">SendGrid</a> add-on</li>
-              <li>Monitoring via <a href="http://newrelic.com" target="_blank">New Relic</a> add-on</li>
+              <li>Designer</li>
+              <li>Developer</li>
             </ul>
-          </ul>  
-        </div>
-        <a class="github_url" href="http://github.com/reednj77/visual_resume" target="_blank">github.com/reednj77/visual_resume</a>
-        <%= image_tag "closed.png", :title => "Close info panel", :class => "close_btn", :size => "16x16" %>
-      </div>
-      <div class="site_labels">
-        <%= image_tag "file.png", :title => "Info", :class => "site_info_btn", :size => "16x16" %>
-        <div class="site_label">Resum&eacute; <small>(June '12)</small></div>
-      </div>
-    </li>
-    <li>
-      <%= image_tag "cjandmary.png", :title => "CJ and Mary", :class => "site", :size => "760x460" %>
-      <div class="tab second"></div>
-      <div class="site_info">
-        <h3>CJ & Mary</h3>
-        <a class="site_url" href="http://cjandmary.com" target="_blank">cjandmary.com</a>
-        <div class="info_section">
-          <div class="info_label">Description</div>
-          <p class="description">
-            A family-themed blog for my brother and sister-in-law.
-          </p>
-        </div>
-        <div class="info_section">
-          <div class="info_label">My Roles</div>
-          <ul>
-            <li>Sole Designer</li>
-            <li>Sole Developer</li>
-          </ul>
-        </div>
-        <div class="info_section">
-          <div class="info_label">Primary Languages</div>
-          <ul>
-            <li>Ruby on Rails</li>
-            <li>Sass</li>
-            <li>CoffeeScript + jQuery</li>
-          </ul>
-        </div>
-        <div class="info_section">
-          <div class="info_label">Database</div>
-          <ul>
-            <li>PostgreSQL</li>
-          </ul>
-        </div>
-        <div class="info_section">
-          <div class="info_label">Services</div>
-          <ul>
-            <li>Amazon S3 storage for photos</li>
-            <li>Twitter API</li>
-            <li>YouTube API</li>
-            <li>Deployed to <a href="http://heroku.com" target="_blank">Heroku</a></li>
+          </div>
+          <div class="info_section">
+            <div class="info_label">Primary Languages</div>
             <ul>
-              <li>SMTP mail via <a href="http://sendgrid.com" target="_blank">SendGrid</a> add-on</li>
-              <li>Monitoring via <a href="http://newrelic.com" target="_blank">New Relic</a> add-on</li>
+              <li>Ruby on Rails</li>
+              <li>Sass</li>
+              <li>CoffeeScript + jQuery</li>
             </ul>
-          </ul>
-        </div>
-        <a class="github_url" href="http://github.com/reednj77/cjandmary" target="_blank">github.com/reednj77/cjandmary</a>
-        <%= image_tag "closed.png", :title => "Close info panel", :class => "close_btn", :size => "16x16" %>
-      </div>
-      <div class="site_labels">
-        <%= image_tag "file.png", :title => "Info", :class => "site_info_btn", :size => "16x16" %>
-        <div class="site_label">CJ & Mary <small>(April '12)</small></div>
-      </div>
-    </li>
-    <li>
-      <%= image_tag "sitesusage.png", :title => "Sites Usage", :class => "site", :size => "760x460" %>
-      <div class="tab third"></div>
-      <div class="site_info">
-        <h3>MU Sites Usage</h3>
-        <a class="site_url" href="http://sitesusage.doit.missouri.edu" target="_blank">sitesusage.doit.missouri.edu</a>
-        <div class="info_section">
-          <div class="info_label">Description</div>
-          <p class="description">
-            Provides computer availability to public users and usage history and statistics to department managers.
-            Availability API is being utilized by other department sites. 
-          </p>
-        </div>
-        <div class="info_section">
-          <div class="info_label">My Roles</div>
-          <ul>
-            <li>Sole Designer/Developer</li>
-            <li>Wrote client agents</li>
+          </div>
+          <div class="info_section">
+            <div class="info_label">Database</div>
             <ul>
-              <li>Ruby (Mac/Linux) + PowerShell (Windows)</li>
+              <li>PostgreSQL</li>
             </ul>
-          </ul>
+          </div>
+          <div class="info_section">
+            <div class="info_label">Services</div>
+            <ul>
+              <li>Deployed to <a href="http://heroku.com" target="_blank">Heroku</a></li>
+              <ul>
+                <li>SMTP mail via <a href="http://sendgrid.com" target="_blank">SendGrid</a> add-on</li>
+                <li>Monitoring via <a href="http://newrelic.com" target="_blank">New Relic</a> add-on</li>
+              </ul>
+            </ul>  
+          </div>
+          <a class="github_url" href="http://github.com/reednj77/visual_resume" target="_blank">github.com/reednj77/visual_resume</a>
+          <%= image_tag "closed.png", :title => "Close info panel", :class => "close_btn", :size => "16x16" %>
         </div>
-        <div class="info_section">
-          <div class="info_label">Primary Languages</div>
-          <ul>
-            <li>Ruby on Rails</li>
-            <li>Sass + CoffeeScript + jQuery</li>
-          </ul>
+        <div class="site_labels">
+          <%= image_tag "file.png", :title => "Info", :class => "site_info_btn", :size => "16x16" %>
+          <div class="site_label">Resum&eacute; <small>(June '12)</small></div>
         </div>
-        <div class="info_section">
-          <div class="info_label">Database</div>
-          <ul>
-            <li>Microsoft SQL Server 2008 (hosted)</li>
-          </ul>
+      </li>
+      <li>
+        <%= image_tag "cjandmary.png", :title => "CJ and Mary", :class => "site", :size => "760x460" %>
+        <div class="tab second"></div>
+        <div class="site_info">
+          <h3>CJ & Mary</h3>
+          <a class="site_url" href="http://cjandmary.com" target="_blank">cjandmary.com</a>
+          <div class="info_section">
+            <div class="info_label">Description</div>
+            <p class="description">
+              A family-themed blog for my brother and sister-in-law.
+            </p>
+          </div>
+          <div class="info_section">
+            <div class="info_label">My Roles</div>
+            <ul>
+              <li>Sole Designer</li>
+              <li>Sole Developer</li>
+            </ul>
+          </div>
+          <div class="info_section">
+            <div class="info_label">Primary Languages</div>
+            <ul>
+              <li>Ruby on Rails</li>
+              <li>Sass</li>
+              <li>CoffeeScript + jQuery</li>
+            </ul>
+          </div>
+          <div class="info_section">
+            <div class="info_label">Database</div>
+            <ul>
+              <li>PostgreSQL</li>
+            </ul>
+          </div>
+          <div class="info_section">
+            <div class="info_label">Services</div>
+            <ul>
+              <li>Amazon S3 storage for photos</li>
+              <li>Twitter API</li>
+              <li>YouTube API</li>
+              <li>Deployed to <a href="http://heroku.com" target="_blank">Heroku</a></li>
+              <ul>
+                <li>SMTP mail via <a href="http://sendgrid.com" target="_blank">SendGrid</a> add-on</li>
+                <li>Monitoring via <a href="http://newrelic.com" target="_blank">New Relic</a> add-on</li>
+              </ul>
+            </ul>
+          </div>
+          <a class="github_url" href="http://github.com/reednj77/cjandmary" target="_blank">github.com/reednj77/cjandmary</a>
+          <%= image_tag "closed.png", :title => "Close info panel", :class => "close_btn", :size => "16x16" %>
         </div>
-        <div class="info_section">
-          <div class="info_label">Services</div>
-          <ul>
-            <li>LDAP Authentication</li>
-          </ul>  
+        <div class="site_labels">
+          <%= image_tag "file.png", :title => "Info", :class => "site_info_btn", :size => "16x16" %>
+          <div class="site_label">CJ & Mary <small>(April '12)</small></div>
         </div>
-        <div class="info_section">
-          <div class="info_label">Deployment</div>
-          <ul>
-            <li>Virtual server with Red Hat Enterprise Linux 5</li>
-            <li>Apache + Phusion Passenger</li>
-          </ul>
+      </li>
+      <li>
+        <%= image_tag "sitesusage.png", :title => "Sites Usage", :class => "site", :size => "760x460" %>
+        <div class="tab third"></div>
+        <div class="site_info">
+          <h3>MU Sites Usage</h3>
+          <a class="site_url" href="http://sitesusage.doit.missouri.edu" target="_blank">sitesusage.doit.missouri.edu</a>
+          <div class="info_section">
+            <div class="info_label">Description</div>
+            <p class="description">
+              Provides computer availability to public users and usage history and statistics to department managers.
+              Availability API is being utilized by other department sites. 
+            </p>
+          </div>
+          <div class="info_section">
+            <div class="info_label">My Roles</div>
+            <ul>
+              <li>Sole Designer/Developer</li>
+              <li>Wrote client agents</li>
+              <ul>
+                <li>Ruby (Mac/Linux) + PowerShell (Windows)</li>
+              </ul>
+            </ul>
+          </div>
+          <div class="info_section">
+            <div class="info_label">Primary Languages</div>
+            <ul>
+              <li>Ruby on Rails</li>
+              <li>Sass + CoffeeScript + jQuery</li>
+            </ul>
+          </div>
+          <div class="info_section">
+            <div class="info_label">Database</div>
+            <ul>
+              <li>Microsoft SQL Server 2008 (hosted)</li>
+            </ul>
+          </div>
+          <div class="info_section">
+            <div class="info_label">Services</div>
+            <ul>
+              <li>LDAP Authentication</li>
+            </ul>  
+          </div>
+          <div class="info_section">
+            <div class="info_label">Deployment</div>
+            <ul>
+              <li>Virtual server with Red Hat Enterprise Linux 5</li>
+              <li>Apache + Phusion Passenger</li>
+            </ul>
+          </div>
+          <a class="github_url" href="http://github.com/reednj77/mu_sites_usage" target="_blank">github.com/reednj77/mu_sites_usage</a>
+          <%= image_tag "closed.png", :title => "Close info panel", :class => "close_btn", :size => "16x16" %>
         </div>
-        <a class="github_url" href="http://github.com/reednj77/mu_sites_usage" target="_blank">github.com/reednj77/mu_sites_usage</a>
-        <%= image_tag "closed.png", :title => "Close info panel", :class => "close_btn", :size => "16x16" %>
-      </div>
-      <div class="site_labels">
-        <%= image_tag "file.png", :title => "Info", :class => "site_info_btn", :size => "16x16" %>
-        <div class="site_label">MU Sites Usage <small>(February '12)</small></div>
-      </div>
-    </li>
-    <li>
-      <%= image_tag "sitestech.png", :title => "Sites Tech Support", :class => "site", :size => "760x460" %>
-      <div class="tab fourth"></div>
-      <div class="site_info">
-        <h3>MU Computing Sites Tech Support</h3>
-        <a class="site_url" href="http://sitestech.doit.missouri.edu" target="_blank">sitestech.doit.missouri.edu</a>
-        <div class="info_section">
-          <div class="info_label">Description</div>
-          <p class="description">
-            Internal site for team to manage resources, keep documentation, and maintain records of software requests.
-          </p>
+        <div class="site_labels">
+          <%= image_tag "file.png", :title => "Info", :class => "site_info_btn", :size => "16x16" %>
+          <div class="site_label">MU Sites Usage <small>(February '12)</small></div>
         </div>
-        <div class="info_section">
-          <div class="info_label">My Roles</div>
-          <ul>
-            <li>Designer</li>
-            <li>Developer</li>
-            <li>Database Administrator</li>
-            <li>Server Administrator</li>
-          </ul>
+      </li>
+      <li>
+        <%= image_tag "sitestech.png", :title => "Sites Tech Support", :class => "site", :size => "760x460" %>
+        <div class="tab fourth"></div>
+        <div class="site_info">
+          <h3>MU Computing Sites Tech Support</h3>
+          <a class="site_url" href="http://sitestech.doit.missouri.edu" target="_blank">sitestech.doit.missouri.edu</a>
+          <div class="info_section">
+            <div class="info_label">Description</div>
+            <p class="description">
+              Internal site for team to manage resources, keep documentation, and maintain records of software requests.
+            </p>
+          </div>
+          <div class="info_section">
+            <div class="info_label">My Roles</div>
+            <ul>
+              <li>Designer</li>
+              <li>Developer</li>
+              <li>Database Administrator</li>
+              <li>Server Administrator</li>
+            </ul>
+          </div>
+          <div class="info_section">
+            <div class="info_label">Primary Languages</div>
+            <ul>
+              <li>PHP</li>
+              <li>HTML + CSS</li>
+              <li>jQuery</li>
+            </ul>
+          </div>
+          <div class="info_section">
+            <div class="info_label">Database</div>
+            <ul>
+              <li>MySQL 5</li>
+            </ul>
+          </div>
+          <div class="info_section">
+            <div class="info_label">Services</div>
+            <ul>
+              <li>LDAP Authentication</li>
+            </ul>  
+          </div>
+          <div class="info_section">
+            <div class="info_label">Deployment</div>
+            <ul>
+              <li>Virtual server with Windows Server 2008 R2</li>
+              <li>IIS 7</li>
+            </ul>
+          </div>
+          <%= image_tag "closed.png", :title => "Close info panel", :class => "close_btn", :size => "16x16" %>
         </div>
-        <div class="info_section">
-          <div class="info_label">Primary Languages</div>
-          <ul>
-            <li>PHP</li>
-            <li>HTML + CSS</li>
-            <li>jQuery</li>
-          </ul>
+        <div class="site_labels">
+          <%= image_tag "file.png", :title => "Info", :class => "site_info_btn", :size => "16x16" %>
+          <div class="site_label">Sites Tech Support <small>(March '10)</small></div>
         </div>
-        <div class="info_section">
-          <div class="info_label">Database</div>
-          <ul>
-            <li>MySQL 5</li>
-          </ul>
-        </div>
-        <div class="info_section">
-          <div class="info_label">Services</div>
-          <ul>
-            <li>LDAP Authentication</li>
-          </ul>  
-        </div>
-        <div class="info_section">
-          <div class="info_label">Deployment</div>
-          <ul>
-            <li>Virtual server with Windows Server 2008 R2</li>
-            <li>IIS 7</li>
-          </ul>
-        </div>
-        <%= image_tag "closed.png", :title => "Close info panel", :class => "close_btn", :size => "16x16" %>
-      </div>
-      <div class="site_labels">
-        <%= image_tag "file.png", :title => "Info", :class => "site_info_btn", :size => "16x16" %>
-        <div class="site_label">Sites Tech Support <small>(March '10)</small></div>
-      </div>
-    </li>
-  </ul>
-</section>
-<section id="page_header">
-  <div class="small_logo">Nick J. Reed</div>
-  <div class="page_header_title">Portfolio</div>
-  <%= image_tag 'home.png', :id => 'home_btn', :size => '20x20', :title => 'Go back to the home page' %>
-</section>
+      </li>
+    </ul>
+  </section>
+  <section id="page_header">
+    <div class="small_logo">Nick J. Reed</div>
+    <div class="page_header_title">Portfolio</div>
+    <%= image_tag 'home.png', :id => 'home_btn', :size => '20x20', :title => 'Go back to the home page' %>
+  </section>
+<% end %>

@@ -1,25 +1,27 @@
-<%= image_tag 'home.png', :id => 'home_btn', :size => '20x20', :title => 'Go back to the home page' %>
-<section id="page_header">
-  <div class="page_header_title">Skills</div>
-  <div class="page_header_separator">JI</div>
-</section>
-<section id="page_content">
-  <div id="active_skill_category">
+<% cache do %>
+  <%= image_tag 'home.png', :id => 'home_btn', :size => '20x20', :title => 'Go back to the home page' %>
+  <section id="page_header">
+    <div class="page_header_title">Skills</div>
+    <div class="page_header_separator">JI</div>
+  </section>
+  <section id="page_content">
+    <div id="active_skill_category">
   
-  </div>
-  <div id="word_cloud_container">
-    <canvas id="word_cloud" width="900" height="300"></canvas>
-  </div>
-  <div id="back_to_categories">
-    <%= image_tag "arrow-left.png", :id => "back_btn", :size => '25x25' %> 
-    <div>Show Categories</div>
-  </div>
-  <div id="skills_categories" class="hidden">
-    <%= render :partial => 'categories' %>
-  </div>
-  <% %w[languages systems databases sysadmintools software webservers_frameworks developmenttools services].each do |category| %>
-    <div id="<%= category %>" class="hidden category">
-      <%= render :partial => category %>
     </div>
-  <% end %>
-</section>
+    <div id="word_cloud_container">
+      <canvas id="word_cloud" width="900" height="300"></canvas>
+    </div>
+    <div id="back_to_categories">
+      <%= image_tag "arrow-left.png", :id => "back_btn", :size => '25x25' %> 
+      <div>Show Categories</div>
+    </div>
+    <div id="skills_categories" class="hidden">
+      <%= render :partial => 'categories' %>
+    </div>
+    <% %w[languages systems databases sysadmintools software webservers_frameworks developmenttools services].each do |category| %>
+      <div id="<%= category %>" class="hidden category">
+        <%= render :partial => category %>
+      </div>
+    <% end %>
+  </section>
+<% end %>
