@@ -235,7 +235,7 @@
 				width: 100%;
 				font-size: 24px;
 				background-color: rgba(38, 75, 122, 0.55);
-				@include border-radius(5px);
+				border-radius: 5px;
 				padding: 10px 0px;
 			}
 			.row2 {
@@ -247,7 +247,7 @@
 					display: inline-block;
 					background-color: rgba(38, 75, 122, 0.55);
 					margin: 0px 2px;
-					@include border-radius(5px);
+					border-radius: 5px;
 					padding: 10px 0px;
 					span {
 						display: block;
@@ -266,7 +266,7 @@
 					display: inline-block;
 					background-color: rgba(38, 75, 122, 0.55);
 					margin: 0px 2px;
-					@include border-radius(5px);
+					border-radius: 5px;
 					padding: 10px 0px;
 					span {
 						display: block;
@@ -291,11 +291,10 @@
 			font-variant: small-caps;
 			@include transform(rotate(-7deg));
 			@include transform-origin(left bottom);
-			@include border-radius(0px 10px 10px 0px);
+			border-radius: 0px 10px 10px 0px;
 			background-color: #F1F1F1;
 			color: #2E2E2E;
 			text-align: right;
-			//font-family: 'QlassikMediumRegular';
 			font-family: 'VeggieBurgerRegular';
 			font-size: 18px;
 		}
@@ -307,7 +306,7 @@
 			padding-left: 20px;
 			padding-right: 20px;
 			border: 2px solid #F1F1F1;
-			@include border-radius(10px 0px 0px 10px);
+			border-radius: 10px 0px 0px 10px;
 			@include transform(rotate(-7deg));
 			@include transform-origin(right top);
 			font-variant: small-caps;

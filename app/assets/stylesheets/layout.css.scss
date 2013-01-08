@@ -21,7 +21,7 @@ body {
 	font-family: 'ExoExtraLight';
 	color: #FFFFFF;
 	padding: 10px 10px 75px 10px;
-	@include border-radius(5px);
+	border-radius: 5px;
 }
 #logo {
 	padding-top: 30px;
@@ -136,14 +136,14 @@ body {
 	&.p8 { @include position(absolute, 50px 0 0 395px); }
 	&.takeover {
 		@include position(absolute, 0px 0 0 0px); 
-		@include border-radius(5px);
+		border-radius: 5px;
 	}
 }
 .small_block_left {
 	width: 225px;
 	height: 100px;
 	position: absolute;
-	@include border-radius(5px);
+	border-radius: 5px;
 	color: #001E33;
 	&.outline {
 		width: 221px;
@@ -159,7 +159,7 @@ body {
 	&.p8 { @include position(absolute, 50px 0 0 320px); }
 	&.takeover {
 		@include position(absolute, 0px 0 0 0px); 
-		@include border-radius(5px);
+		border-radius: 5px;
 	}
 }
 .initial_hover {
@@ -220,7 +220,7 @@ body {
 }
 #p0 {
 	z-index: 100;
-	@include border-radius(10px);
+	border-radius: 10px;
 }
 #p1, #p5 {
 	z-index: 40;
@@ -245,7 +245,7 @@ body {
 	left: 0;
 	border: none !important;
 	@include transform(rotate(0deg));
-	@include border-radius(5px);
+	border-radius: 5px;
 	@include box-shadow(0 0 5px 3px rgba(255, 255, 255, 0.65));	
 	&:hover {
 		cursor: default;	
@@ -261,7 +261,7 @@ body {
 	padding: 10px;
 	font-size: 10px;
 	font-family: $verdana;
-	@include border-radius(5px);
+	border-radius: 5px;
 	@include box-shadow(0 0 3px 3px rgba(255, 255, 255, 0.2));
 }
 .hide {
