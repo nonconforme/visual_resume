@@ -10,7 +10,8 @@ reset = false
 
 jQuery -> 
 	$('#sublogo').hide()
-	$('#home_btn').hide().live 'click', returnToNormal
+	$('#home_btn').hide()
+	$(document).on 'click', '#home_btn', returnToNormal
 	$('.block, .small_block_left, .small_block_right').each ->
 		$(this).contents().hide()
 	
@@ -26,8 +27,8 @@ jQuery ->
 		
 	initPushState()
 	
-	$('#throbbler_container').ajaxComplete ->
-		$(this).hide()
+	$(document).ajaxComplete ->
+		$('#throbbler_container').hide()
 
 initPushState = ->
 	if pstateAvailable
