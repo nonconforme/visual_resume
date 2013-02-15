@@ -14,6 +14,7 @@ showWordCloud = (id) ->
 		frontSelect: true,
 		outlineOffset: 1,
 		outlineMethod: 'colour',
+		txtOpt: false,
 		minSpeed: .003,
 		reverse: true,
 		textFont: '' }, id)
