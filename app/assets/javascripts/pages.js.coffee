@@ -17,13 +17,19 @@ jQuery ->
 	
 	if directToPage()
 		window.initialLoad = 1
+		$('#progress_bar_left, #progress_bar_right').remove()
 		$('.initial_hover').removeClass 'initial_hover'
 		setTimeout ( ->
 			pageBlock(currentPage()).one('click', takeover).click()
 		), 200
 	else
 		window.initialLoad = 0
-		$('#logo').one 'click', stepOne
+		$('#progress_bar_left, #progress_bar_right').animate {width: $('#logo').offset().left + 'px'}, 5000, 'easeInCubic', ->
+			$(this).fadeOut 500, ->
+				$(this).remove()
+			
+			stepOne()
+		
 		
 	initPushState()
 	
@@ -46,10 +52,17 @@ pageBlock = (page) -> $('[data-page="' + page + '"], [data-url="' + page + '"]')
 	
 stepOne = ->
   $('.initial_hover').removeClass 'initial_hover'
+  $('#p2, #p8, #p4, #p6').addClass 'block_hide'
   $('#p1, #p2, #p8').switchClass 'p0', 'p1', 1000, ->
-    $('.block_label', this).fadeIn() if $(this).attr('id') is 'p1'
+    if $(this).attr('id') is 'p1'
+      $('.block_label', this).fadeIn()
+    else
+      $(this).removeClass 'block_hide'
   $('#p4, #p5, #p6').switchClass 'p0', 'p5', 1000, ->
-    $('.block_label', this).fadeIn() if $(this).attr('id') is 'p5'
+    if $(this).attr('id') is 'p5'
+      $('.block_label', this).fadeIn()
+    else
+      $(this).removeClass 'block_hide'
   setTimeout stepTwo, 1000
 
 stepTwo = ->
@@ -86,14 +99,14 @@ toggleSublogo = (action) ->
 	$('#sublogo').hide('slide', direction: 'up') if action is 'hide'
 				
 takeover = ->
-	$('.block_label', this).fadeOut(500) if window.initialLoad is 0
+	$('.block_label', this).hide() if window.initialLoad is 0
 	$('.block, .small_block_left, .small_block_right').not(this).each ->
 		$(this).fadeOut(1000) 
 	$(this).addClass("#{$(this).data('page')}_bg")
 	setTimeout ( ->
 		$('#throbbler_container').fadeIn()
 	), 1000
-	$(this).addClass('highest_box').addClass('takeover', 2000, 'easeOutBounce', ->
+	$(this).addClass('highest_box').addClass('takeover', 2000, 'easeOutBack', ->
 		$('#page').addClass($(this).data('page'))
 		$('.page_header_title').one('click', returnToNormal)
 		$('.block, .small_block_left, .small_block_right').toggleClass 'outline' if window.initialLoad is 0
@@ -141,7 +154,7 @@ returnToNormal = ->
 	pushed = true
 	$('.block, .small_block_left, .small_block_right').not(this).each ->
 		$(this).fadeIn(1000) 
-	$('.takeover').removeClass('takeover', 1000, ->
+	$('.takeover').removeClass('takeover', 1000, 'easeOutBack', ->
 		$(this).removeClass('highest_box education_bg').unbind('click').one('click', takeover)
 		$('.block_label', this).fadeIn() if window.initialLoad is 0
 		stepOne() if window.initialLoad is 1

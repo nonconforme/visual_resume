@@ -3,6 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .education_bg {
 	background-image: image_url('mizzou.jpg');
+  background-color: transparent;
+  background-repeat: no-repeat;
 }
 #page {
 	#page_header {
@@ -32,6 +34,7 @@
 		}
 		#my_pic {
 			@include position(absolute, 0px 0 0 0px);
+      border-radius: 5px 0px 0px 5px;
 		}
 		#page_content {
 			margin-left: 320px;
@@ -216,6 +219,12 @@
 				cursor: pointer;
 			}
 		}
+    .category a {
+      color: #FFFFFF;
+      &:hover {
+        color: #FFFFFF;
+      }
+    }
 	}
 	&.education {
 		#page_header {
@@ -226,7 +235,7 @@
 			margin-left: 375px;
 			margin-top: 40px;
 			text-align: center;
-			text-shadow: 0 2px 3px #FFFFFF;
+			text-shadow: 0 2px 3px rgba(255,255,255,0.65);
 			.row1, .row2, .row3 {	
 				display: none;
 				margin-top: 20px;	
