@@ -2,8 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .education_bg {
-	background-image: image_url('mizzou.jpg');
-  background-color: transparent;
+	background-color: rgb(14, 44, 58) !important; 
+  background-image: image_url('mizzou.jpg'); 
   background-repeat: no-repeat;
 }
 #page {

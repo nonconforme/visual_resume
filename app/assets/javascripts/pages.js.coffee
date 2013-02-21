@@ -28,7 +28,7 @@ jQuery ->
 			$(this).fadeOut 500, ->
 				$(this).remove()
 			
-			stepOne()
+			stepOne() if $(this).attr('id') is 'progress_bar_left'
 		
 		
 	initPushState()
@@ -125,7 +125,7 @@ takeover = ->
 moveLogo = (page) ->
 	switch page
 		when 'home'
-			options = {top: '-=255px', left: '320px', fontSize: '72px', opacity: 1 }
+			options = {top: '-=255px', left: '320px', fontSize: '72px', opacity: 1, borderRadius: '10px' }
 			speed = 1000
 			easing = ''
 		when 'about'
@@ -137,7 +137,7 @@ moveLogo = (page) ->
 			speed = 2000
 			easing = ''
 		else 
-			options = {top: '+=255px', fontSize: '54px'}
+			options = {top: '+=255px', fontSize: '54px', borderRadius: '100px'}
 			speed = 2000
 			easing = 'easeOutBack'
 	$('#p0').animate options, speed, easing
