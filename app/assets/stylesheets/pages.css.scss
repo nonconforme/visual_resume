@@ -382,6 +382,7 @@
 					&.second { @include linear-gradient(left, lighten(rgba(27,68,111, 1), 10%), lighten(rgba(27,68,111, 1), 15%)); }
 					&.third { @include linear-gradient(left, lighten(rgba(27,68,111, 1), 20%), lighten(rgba(27,68,111, 1), 25%)); }
 					&.fourth { @include linear-gradient(left, lighten(rgba(27,68,111, 1), 30%), lighten(rgba(27,68,111, 1), 35%)); }
+          &.fifth { @include linear-gradient(left, lighten(rgba(27,68,111, 1), 40%), lighten(rgba(27,68,111, 1), 45%)); }
 				}
 				.site_info {
 					display: none;
@@ -438,12 +439,13 @@
 					color: #FFFFFF;
 					font-size: 16px;
 					img, div {
-						margin-left: 10px;
+						margin-left: 3px;
 						padding: 10px;
 						display: inline-block;
 						background-color: rgba(0, 0, 0, 0.8);
 						border-radius: 15px;
 						float: left;
+            min-height: 18px;
 					}
 					.site_label {
 						font-family: 'ExoDemiBold';
