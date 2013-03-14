@@ -24,7 +24,8 @@ jQuery ->
 		), 200
 	else
 		window.initialLoad = 0
-		$('#progress_bar_left, #progress_bar_right').animate {width: $('#logo').offset().left + 'px'}, 5000, 'easeInCubic', ->
+		$('#logo').textillate({ in: {effect: 'fadeIn', delay: 140, shuffle: true}})
+		$('#progress_bar_left, #progress_bar_right').animate {width: $('#logo').offset().left + 'px'}, 3000, 'easeInCubic', ->
 			$(this).fadeOut 500, ->
 				$(this).remove()
 			
@@ -55,34 +56,34 @@ stepOne = ->
   $('#p2, #p8, #p4, #p6').addClass 'block_hide'
   $('#p1, #p2, #p8').switchClass 'p0', 'p1', 1000, ->
     if $(this).attr('id') is 'p1'
-      $('.block_label', this).fadeIn()
+      $('.block_label', this).fadeIn().textillate({in: {effect: 'fadeInUp', shuffle: false}})
     else
       $(this).removeClass 'block_hide'
   $('#p4, #p5, #p6').switchClass 'p0', 'p5', 1000, ->
     if $(this).attr('id') is 'p5'
-      $('.block_label', this).fadeIn()
+      $('.block_label', this).fadeIn().textillate({in: {effect: 'fadeInDown', shuffle: false}})
     else
       $(this).removeClass 'block_hide'
   setTimeout stepTwo, 1000
 
 stepTwo = ->
   $('#p6').switchClass 'p5', 'p6', 2000, 'easeOutElastic', ->
-    $('.block_label', this).fadeIn()
+    $('.block_label', this).fadeIn().textillate({in: {effect: 'fadeInRight', shuffle: false}})
   setTimeout stepThree, 400
 
 stepThree = ->
   $('#p8').switchClass 'p1', 'p8', 2000, 'easeOutElastic', ->
-    $('.block_label', this).fadeIn()
+    $('.block_label', this).fadeIn().textillate({in: {effect: 'fadeInUp', shuffle: false}})
   setTimeout stepFour, 400
 
 stepFour = ->
   $('#p2').switchClass 'p1', 'p2', 2000, 'easeOutElastic', ->
-    $('.block_label', this).fadeIn()
+    $('.block_label', this).fadeIn().textillate({in: {effect: 'fadeInLeft', shuffle: false}})
   setTimeout stepFive, 400
 
 stepFive = ->
   $('#p4').switchClass 'p5', 'p4', 2000, 'easeOutElastic', ->
-    $('.block_label', this).fadeIn()
+    $('.block_label', this).fadeIn().textillate({in: {effect: 'fadeInDown', shuffle: false}})
   setTimeout stepSix, 1000
 
 stepSix = ->
@@ -95,7 +96,7 @@ stepSix = ->
   $('#logo').unbind('click').bind 'click', rotate
 
 toggleSublogo = (action) -> 
-	$('#sublogo').show('slide', direction: 'up') if action is 'show'
+	$('#sublogo').show().textillate({ in: {effect: 'rotateIn', shuffle: true, delay: 200 }}) if action is 'show'
 	$('#sublogo').hide('slide', direction: 'up') if action is 'hide'
 				
 takeover = ->

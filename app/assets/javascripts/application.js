@@ -16,5 +16,8 @@
 //= require jquery.tagcanvas
 //= require jquery.zaccordion
 //= require jquery.flippy.min
+//= require jquery.fittext
+//= require jquery.lettering
+//= require jquery.textillate
 //= require bootstrap.min
 //= require_tree .
