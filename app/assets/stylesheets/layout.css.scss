@@ -1,3 +1,14 @@
+$pageX: 940px;
+$pageY: 490px;
+$gutter: 20px;
+
+$pageVerticalMargin: 50px;
+
+$blockX: ($pageX - (2 * $gutter)) / 3;
+$blockY: ($pageY - (2 * $gutter)) / 3;
+$smallBlockX: (3 * $blockX) / 4;
+$smallBlockY: (2 * $blockY) / 3;
+
 body {
 	background-color: rgb(14, 44, 58);
 	background-image: image_url('bg.jpg');
@@ -6,7 +17,7 @@ body {
 }
 #progress_bar_left {
   position: absolute;
-  top: 270px;
+	top: ((($pageY * 4) + $gutter) / 9) + $pageVerticalMargin;
   left: 0px;
   height: 1px;
   width: 0px;
@@ -16,7 +27,7 @@ body {
 }
 #progress_bar_right {
   position: absolute;
-  top: 320px;
+	top: ((($pageY * 5) - $gutter) / 9) + $pageVerticalMargin;
   right: 0px;
   height: 1px;
   width: 0px;
@@ -25,16 +36,16 @@ body {
   border-radius: 50px 0px 0px 50px;
 }
 #main {
-	width: 940px;
-	height: 490px;
-	margin: 50px auto;
+	width: $pageX;
+	height: $pageY;
+	margin: $pageVerticalMargin auto;
 	font-family: 'DesyrelRegular';
 	position: relative;
 }
 #page {
 	display: none;
-	width: 920px;
-	height: 405px;
+	width: $pageX - 20;
+	height: $pageY - 85;
 	z-index: 150;
 	@include position(absolute, 0px 0 0 0px); 
 	margin: 0px auto;
@@ -52,9 +63,9 @@ body {
 }
 #throbbler_container {
 	display: none;
-	width: 920px;
-	height: 490px;
-	line-height: 490px;
+	width: $pageX - 20;
+	height: $pageY;
+	line-height: $pageY;
 	z-index: 140;
 	@include position(absolute, 0px 0 0 0px);
 	background: image_url('ajax-loader.gif') no-repeat center center;
@@ -70,14 +81,14 @@ body {
   display: none;
 }
 .block {
-	width: 300px;
-	height: 150px;
+	width: $blockX;
+	height: $blockY;
 	position: absolute;
 	border-radius: 5px;
 	color: rgb(44, 93, 128);
 	&.outline {
-		height: 146px;
-		width: 296px;
+		height: $blockY - 4;
+		width: $blockX - 4;
 	}
 	&.p1 {
 		@include position(absolute, 0px 0 0 0px); 
@@ -90,11 +101,11 @@ body {
 		}
 	}
 	&.p2 {
-		@include position(absolute, 170px 0 0 0px);
+		@include position(absolute, ($blockY + $gutter) 0 0 0px);
 		border-radius: 25px 5px 5px 25px;
 	}
 	&.p3 {
-		@include position(absolute, 340px 0 0 0px); 
+		@include position(absolute, (2 * ($blockY + $gutter)) 0 0 0px); 
 		border-radius: 5px 5px 5px 50px;
 		&.takeover .block_label {
 			@include transform(rotate(0deg));
@@ -104,11 +115,11 @@ body {
 		}
 	}
 	&.p4 {
-		@include position(absolute, 340px 0 0 320px);
+		@include position(absolute, (2 * ($blockY + $gutter)) 0 0 ($blockX + $gutter));
 		border-radius: 5px 5px 25px 25px;
 	}
 	&.p5 {
-		@include position(absolute, 340px 0 0 640px); 
+		@include position(absolute, (2 * ($blockY + $gutter)) 0 0 (2 * ($blockX + $gutter))); 
 		border-radius: 5px 5px 50px 5px;
 		.block_label {
 			@include transform(rotate(-15deg));
@@ -118,11 +129,11 @@ body {
 		}
 	}
 	&.p6 {
-		@include position(absolute, 170px 0 0 640px); 
+		@include position(absolute, ($blockY + $gutter) 0 0 (2 * ($blockX + $gutter))); 
 		border-radius: 5px 25px 25px 5px;
 	}
 	&.p7 {
-		@include position(absolute, 0px 0 0 640px); 
+		@include position(absolute, 0px 0 0 (2 * ($blockX + $gutter))); 
 		border-radius: 5px 50px 5px 5px;
 		&.takeover .block_label {
 			@include transform(rotate(0deg));
@@ -132,7 +143,7 @@ body {
 		}
 	}
 	&.p8 {
-		@include position(absolute, 0px 0 0 320px); 
+		@include position(absolute, 0px 0 0 ($blockX + $gutter)); 
 		border-radius: 25px 25px 5px 5px;
 	}
 	&.takeover {
@@ -141,46 +152,46 @@ body {
 	}
 }
 .small_block_right {
-	width: 225px;
-	height: 100px;
+	width: $smallBlockX;
+	height: $smallBlockY;
 	position: absolute;
 	border-radius: 5px;
 	color: rgb(44, 93, 128);
 	&.outline {
-		width: 221px;
-		height: 96px;
+		width: $smallBlockX - 4;
+		height: $smallBlockY - 4;
 	}
-	&.p1 { @include position(absolute, 50px 0 0 75px); }
-	&.p2 { @include position(absolute, 170px 0 0 75px); }
-	&.p3 { @include position(absolute, 340px 0 0 75px); }
-	&.p4 { @include position(absolute, 340px 0 0 320px); }
-	&.p5 { @include position(absolute, 340px 0 0 640px); }
-	&.p6 { @include position(absolute, 220px 0 0 640px); }
-	&.p7 { @include position(absolute, 50px 0 0 640px); }
-	&.p8 { @include position(absolute, 50px 0 0 395px); }
+	&.p1 { @include position(absolute, ($blockY - $smallBlockY) 0 0 ($blockX - $smallBlockX)); }
+	&.p2 { @include position(absolute, ($blockY + $gutter) 0 0 ($blockX - $smallBlockX)); }
+	&.p3 { @include position(absolute, (2 * ($blockY + $gutter)) 0 0 ($blockX - $smallBlockX)); }
+	&.p4 { @include position(absolute, (2 * ($blockY + $gutter)) 0 0 ($blockX + $gutter)); }
+	&.p5 { @include position(absolute, (2 * ($blockY + $gutter)) 0 0 (2 * ($blockX + $gutter))); }
+	&.p6 { @include position(absolute, ((2 * $blockY) + $gutter - $smallBlockY) 0 0 (2 * ($blockX + $gutter))); }
+	&.p7 { @include position(absolute, ($blockY - $smallBlockY) 0 0 (2 * ($blockX + $gutter))); }
+	&.p8 { @include position(absolute, ($blockY - $smallBlockY) 0 0 ((2 * $blockX) + $gutter - $smallBlockX)); }
 	&.takeover {
 		@include position(absolute, 0px 0 0 0px); 
 		border-radius: 5px;
 	}
 }
 .small_block_left {
-	width: 225px;
-	height: 100px;
+	width: $smallBlockX;
+	height: $smallBlockY;
 	position: absolute;
 	border-radius: 5px;
 	color: rgb(44, 93, 128);
 	&.outline {
-		width: 221px;
-		height: 96px;
+		width: $smallBlockX - 4;
+		height: $smallBlockY - 4;
 	}
-	&.p1 { @include position(absolute, 50px 0 0 75px); }
-	&.p2 { @include position(absolute, 220px 0 0 75px); }
-	&.p3 { @include position(absolute, 340px 0 0 75px); }
-	&.p4 { @include position(absolute, 340px 0 0 395px); }
-	&.p5 { @include position(absolute, 340px 0 0 640px); }
-	&.p6 { @include position(absolute, 170px 0 0 640px); }
-	&.p7 { @include position(absolute, 50px 0 0 640px); }
-	&.p8 { @include position(absolute, 50px 0 0 320px); }
+	&.p1 { @include position(absolute, ($blockY - $smallBlockY) 0 0 ($blockX - $smallBlockX)); }
+	&.p2 { @include position(absolute, ((2 * $blockY) + $gutter - $smallBlockY) 0 0 ($blockX - $smallBlockX)); }
+	&.p3 { @include position(absolute, (2 * ($blockY + $gutter)) 0 0 ($blockX - $smallBlockX)); }
+	&.p4 { @include position(absolute, (2 * ($blockY + $gutter)) 0 0 ((2 * $blockX) + $gutter - $smallBlockX)); }
+	&.p5 { @include position(absolute, (2 * ($blockY + $gutter)) 0 0 (2 * ($blockX + $gutter))); }
+	&.p6 { @include position(absolute, ($blockY + $gutter) 0 0 (2 * ($blockX + $gutter))); }
+	&.p7 { @include position(absolute, ($blockY - $smallBlockY) 0 0 (2 * ($blockX + $gutter))); }
+	&.p8 { @include position(absolute, ($blockY - $smallBlockY) 0 0 ($blockX + $gutter)); }
 	&.takeover {
 		@include position(absolute, 0px 0 0 0px); 
 		border-radius: 5px;
@@ -200,8 +211,8 @@ body {
 	}	
 }
 .title_block {
-	width: 300px;
-	height: 150px;
+	width: $blockX;
+	height: $blockY;
 	position: absolute;
 	background-image: image_url('bg.jpg');
 }
@@ -235,13 +246,13 @@ body {
 }
 #p2, #p4, #p6, #p8, .takeover {
 	.block_label {
-		line-height: 100px;
+		line-height: $blockY * (2/3);
 		font-size: 22px;
 	}
 }
 .p0 {
-	top: 170px;
-	left: 320px;
+	top: $blockY + $gutter;
+	left: $blockX + $gutter;
 	background-color: transparent;
 	font-size: 72px;
 }
@@ -262,11 +273,11 @@ body {
 }
 .takeover {
 	&.outline {
-		width: 940px;
-		height: 490px;
+		width: $pageX;
+		height: $pageY;
 	}
-	width: 940px;
-	height: 490px;
+	width: $pageX;
+	height: $pageY;
 	z-index: 80 !important;
 	top: 0;
 	left: 0;
