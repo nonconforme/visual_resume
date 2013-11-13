@@ -8,6 +8,7 @@ gem 'pg'
 gem 'thin'
 gem 'newrelic_rpm'
 gem 'dalli'
+gem 'memcachier'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

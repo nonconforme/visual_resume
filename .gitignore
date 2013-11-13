@@ -22,4 +22,5 @@ doc/app
 *~
 .DS_Store
 config/database.yml
-
+.rvmrc
+.env
