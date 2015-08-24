@@ -6,7 +6,7 @@ gem 'rails', '3.2.13'
 
 gem 'pg'
 gem 'thin'
-gem 'newrelic_rpm'
+# gem 'newrelic_rpm'
 gem 'dalli'
 gem 'memcachier'
 
